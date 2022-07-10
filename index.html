@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<style>
+    *{
+        padding:0px;
+        margin: 0px;
+    }
+    body{
+        background:crimson;
+    }
+    #tb{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 40px;
+        margin-left:490px;
+        padding-top: 40px;
+    }
+    .enter{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-weight: bold;
+        color: white;
+        font-size: 30px;
+        margin-left: 250px;
+        padding-top: 50px;
+        display: inline-block;
+    }
+    .in{
+        font-family:Arial, Helvetica, sans-serif;
+        font-size: 23px;
+        border-radius: 5px white;
+        color: black;
+        position: absolute;
+        top:137px;
+        height:23px;
+        width:150px;
+        margin-top: 1px;
+        margin-left: 5px;
+    }
+    .main{
+        margin-left:170px;
+    }
+    .btn{
+        font-family:'Courier New', Courier, monospace;
+        font-size: 15px;
+        height:23px;
+        width: 150px;
+        background-color: rgb(119, 107, 107);
+        border-radius: 20px;
+        border: 2px solid rgb(119, 107, 107);
+        margin-top: 20px;
+        margin-left: 540px;
+    }
+
+    #answer{
+        font-family:'Courier New', Courier, monospace;
+        color:white;
+        font-size: 23px;
+        margin-top: 20px;
+        margin-left: 560px;
+    }
+    /* .clr{
+        font-family:'Courier New', Courier, monospace;
+        font-size: 15px;
+        height:23px;
+        width: 150px;
+        background-color: rgb(119, 107, 107);
+        border-radius: 20px;
+        border: 2px solid rgb(119, 107, 107);
+        margin-top: 20px;
+        margin-right: -700px;
+    } */
+
+    @media (max-width:768px){
+        body{
+            display: inline-block;
+            overflow-x: hidden;
+        }
+        #tb{
+            width: 280px;
+            padding-top: 20px;
+            position: absolute;
+            right:45px;
+            font-size: 30px;
+            display: inline-block;
+        }
+        .main{
+            display: inline-block;
+            position: absolute;
+            left:20px;
+        }
+        .enter{
+            width: 280px;
+            font-size: 22px;
+            position: absolute;
+            left:120px;
+            margin-left: -200px;
+            top:90px;
+            padding-top: 0px;
+        }
+        .in{
+            top:130px;
+            margin-left: -75px;
+        }
+        .btn{
+            height:28px;
+            width: 150px;
+            font-size: 16px;
+            position: absolute;
+            left:115px;
+            top:160px;
+            display: inline-block;
+            margin-left: 0px;
+        }
+        #answer{
+            margin-top: 30px;
+            margin-left: 60px;
+            font-size: 20px;
+            position: absolute;
+            left:65px;
+            top:200px;
+        }
+        /* .clr{
+            height:20px;
+            width: 120px;
+            position: absolute;
+            left:65px;
+            top:144px;
+            display: inline-block;
+            margin-left: 0px;
+            font-size: 12px;
+        } */
+    }
+</style>
+<body>
+    <h1 id="tb">Table Generator</h1>
+    <div class="main">
+        <div class="enter">Enter The Number:</div>
+        <input class="in" type="number"></input>
+    </div>
+    <button class="btn">Generate Table</button>
+    <!-- <button class="clr">Clear</button> -->
+    <div id="answer"></div>
+    <script>
+        const num = document.querySelector('.in');
+        const btn = document.querySelector('.btn');
+        const show = document.querySelector('#answer');
+        // const clear = document.querySelector('.clr');
+        btn.addEventListener("click",() => {
+            let n = num.value;
+            console.log(n);
+            show.innerHTML= '';
+            for(i=1 ; i<=10; i = ++i){
+                let a = `${n} X ${i} = ${n*i} <br>`
+                show.innerHTML +=a;
+            }
+        });
+        // clear.addEventListener("click",()=>{
+        //     show.innerHTML= '';
+        // })
+    </script>
+</body>
+</html>
